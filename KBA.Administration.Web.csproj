@@ -1,0 +1,1491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB216C38-15B6-4752-8D3A-2ADDD64D9F2B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KBA.Administration.Web</RootNamespace>
+    <AssemblyName>KBA.Administration.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
+    <IISExpressSSLPort>44312</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <CodeAnalysisRuleSet>KBA.Administration.Web.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>KBA.Administration.Web.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="LumenWorks.Framework.IO, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\LumenWorksCsvReader.4.0.0\lib\net45\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.4\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.ActiveDirectory.GraphClient, Version=2.1.10.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Microsoft.Azure.Documents.Client, Version=2.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Azure.DocumentDB.2.6.0\lib\net45\Microsoft.Azure.Documents.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Azure.KeyVault.3.0.3\lib\net452\Microsoft.Azure.KeyVault.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.WebKey, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Azure.KeyVault.WebKey.3.0.3\lib\net452\Microsoft.Azure.KeyVault.WebKey.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Services.AppAuthentication, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Azure.Services.AppAuthentication.1.0.3\lib\net452\Microsoft.Azure.Services.AppAuthentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=3.19.8.16603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.19.8.16603, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.19.8\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.IdentityModel.Logging.5.2.1\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=5.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.IdentityModel.Protocols.5.2.1\lib\net451\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=5.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.5.2.1\lib\net451\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.IdentityModel.Tokens.5.2.1\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Client.Policy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.Office.Client.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Client.TranslationServices, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.Office.Client.TranslationServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.SharePoint.Tools, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.Office.SharePoint.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Online.SharePoint.Client.Tenant, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.Online.SharePoint.Client.Tenant.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OpenIdConnect, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Owin.Security.OpenIdConnect.4.0.0\lib\net451\Microsoft.Owin.Security.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ProjectServer.Client, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.ProjectServer.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Rest.ClientRuntime.2.3.18\lib\net452\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Rest.ClientRuntime.Azure.3.3.18\lib\net452\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.DocumentManagement, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.SharePoint.Client.DocumentManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Publishing, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.SharePoint.Client.Publishing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime.Windows, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.SharePoint.Client.Runtime.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.SharePoint.Client.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search.Applications, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.SharePoint.Client.Search.Applications.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Taxonomy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.SharePoint.Client.Taxonomy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.UserProfiles, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.SharePoint.Client.UserProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.WorkflowServices, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.SharePointOnline.CSOM.16.1.8810.1200\lib\net45\Microsoft.SharePoint.Client.WorkflowServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\StackExchange.Redis.1.2.6\lib\net45\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.IdentityModel.Tokens.Jwt.5.2.1\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\..\..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\..\..\..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\..\..\..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\..\..\..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\..\..\..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\..\..\..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\..\..\..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Common\BotDirectLineAuthHelper.cs" />
+    <Compile Include="Common\Crypto.cs" />
+    <Compile Include="Common\ExternalSharingExtensions.cs" />
+    <Compile Include="Common\KomatsuSSOAuthenticationExtensions.cs" />
+    <Compile Include="Common\KomatsuSSOAuthenticationHandler.cs" />
+    <Compile Include="Common\KomatsuSSOAuthenticationMiddleware.cs" />
+    <Compile Include="Common\KomatsuSSOAuthenticationOptions.cs" />
+    <Compile Include="Controllers\AccessDeniedController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AllAppsController.cs" />
+    <Compile Include="Controllers\ApplicationAccessToolController.cs" />
+    <Compile Include="Controllers\AppOnBoardingController.cs" />
+    <Compile Include="Controllers\AssociateCustomersController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BusinessSegmentController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\CustomerAdministrationController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\CustomerSupportController.cs" />
+    <Compile Include="Controllers\CustomerUserController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\DistributorController.cs" />
+    <Compile Include="Controllers\DistributorERPController.cs" />
+    <Compile Include="Controllers\DivisionController.cs" />
+    <Compile Include="Controllers\DmsMachineController.cs" />
+    <Compile Include="Controllers\EmailController.cs" />
+    <Compile Include="Controllers\EmployeeRolesController.cs" />
+    <Compile Include="Controllers\EncryptDecryptController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ExtranetController.cs" />
+    <Compile Include="Controllers\GeoFenceController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManufacturersController.cs" />
+    <Compile Include="Controllers\MyProfileController.cs" />
+    <Compile Include="Controllers\NewCustomerApprovalController.cs" />
+    <Compile Include="Controllers\NewUserRegistrationController.cs" />
+    <Compile Include="Controllers\NotificationDashboardController.cs" />
+    <Compile Include="Controllers\notificationtemplateController.cs" />
+    <Compile Include="Controllers\OnBoardController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\OrganizationController.cs" />
+    <Compile Include="Controllers\PricingMatrixController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\PublicLandingController.cs" />
+    <Compile Include="Controllers\RatedPayloadController.cs" />
+    <Compile Include="Controllers\RedisCacheController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\SelfRegistrationController.cs" />
+    <Compile Include="Controllers\SelfRegistrationDistributorController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\ShippingOptionsController.cs" />
+    <Compile Include="Controllers\TermsconditionsController.cs" />
+    <Compile Include="Controllers\TransactionOptionsController.cs" />
+    <Compile Include="Controllers\UserAdministrationController.cs" />
+    <Compile Include="Controllers\UserManagementDistributorController.cs" />
+    <Compile Include="Controllers\UserManagementKomatsuController.cs" />
+    <Compile Include="Controllers\WorkOrderERPController.cs" />
+    <Compile Include="Filters\AdminActionFilter.cs" />
+    <Compile Include="Filters\AdminAuthorizationFilter.cs" />
+    <Compile Include="Filters\LoginAuthorizeFilterAttribute.cs" />
+    <Compile Include="Filters\OfflineAction.cs" />
+    <Compile Include="Filters\OfflineFileData.cs" />
+    <Compile Include="Filters\OfflineHelper.cs" />
+    <Compile Include="Filters\SafeActionAttribute.cs" />
+    <Compile Include="Filters\SharePointContextFilterAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\localizationMessage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>localizationMessage.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\Resources.cs" />
+    <!--<Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>-->
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utils\Extensions.cs" />
+    <Compile Include="Utils\RedisConnectorHelper.cs" />
+    <Compile Include="Utils\SystemWebCookieManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="assets\css\custom_admin.css" />
+    <Content Include="assets\css\custom_distributor.css" />
+    <Content Include="assets\css\icomoon2.css" />
+    <Content Include="assets\css\iconmoon.css" />
+    <Content Include="assets\css\lib\bootstrap.min.css" />
+    <Content Include="assets\css\lib\font-awesome\all.css" />
+    <Content Include="assets\css\lib\font-awesome\all.min.css" />
+    <Content Include="assets\css\lib\icomoon\icomoon.css" />
+    <Content Include="assets\css\lib\icomoon\iconmoon.min.css" />
+    <Content Include="assets\css\lib\summernote.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\ico-moon\icomoon.svg" />
+    <Content Include="assets\fonts\icomoon-2\icomoon.svg" />
+    <Content Include="assets\fonts\icomoon.svg" />
+    <Content Include="assets\fonts\icomoon\icomoon.svg" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Bold.svg" />
+    <Content Include="assets\fonts\open_sans\OpenSans-BoldItalic.svg" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Extrabold.svg" />
+    <Content Include="assets\fonts\open_sans\OpenSans-ExtraboldItalic.svg" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Italic.svg" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Light.svg" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Semibold.svg" />
+    <Content Include="assets\fonts\open_sans\OpenSans-SemiboldItalic.svg" />
+    <Content Include="assets\fonts\open_sans\OpenSans.svg" />
+    <Content Include="assets\fonts\open_sans\OpenSansLight-Italic.svg" />
+    <Content Include="assets\images\Alert.svg" />
+    <Content Include="assets\images\Brandlogo.svg" />
+    <Content Include="assets\images\choose.png" />
+    <Content Include="assets\images\favicon.ico" />
+    <Content Include="assets\images\glyphicons-halflings.png" />
+    <Content Include="assets\images\grader.png" />
+    <Content Include="assets\images\Icon_vector-05.png" />
+    <Content Include="assets\images\Icon_vector-06.png" />
+    <Content Include="assets\images\Icon_vector-07.png" />
+    <Content Include="assets\images\Icon_vector-08.png" />
+    <Content Include="assets\images\Icon_vector-09.png" />
+    <Content Include="assets\images\Icon_vector-10.png" />
+    <Content Include="assets\images\Icon_vector-12.png" />
+    <Content Include="assets\images\Icon_vector-13.png" />
+    <Content Include="assets\images\Icon_vector-15.png" />
+    <Content Include="assets\images\Icon_vector-16.png" />
+    <Content Include="assets\images\Icon_vector-17.png" />
+    <Content Include="assets\images\Icon_vector-18.png" />
+    <Content Include="assets\images\Icon_vector-19.png" />
+    <Content Include="assets\images\Icon_vector-20.png" />
+    <Content Include="assets\images\Icon_vector-21.png" />
+    <Content Include="assets\images\komatsu.gif" />
+    <Content Include="assets\images\logo1.png" />
+    <Content Include="assets\images\logo2.png" />
+    <Content Include="assets\images\machinelocation.png" />
+    <Content Include="assets\images\machine_icon.png" />
+    <Content Include="assets\images\machine_icon.svg" />
+    <Content Include="assets\images\mapCluster.png" />
+    <Content Include="assets\images\mapPin.png" />
+    <Content Include="assets\images\Map\BACKHOE_LOADER_Blue.png" />
+    <Content Include="assets\images\Map\BACKHOE_LOADER_Customer.png" />
+    <Content Include="assets\images\Map\BACKHOE_LOADER_Gray.png" />
+    <Content Include="assets\images\Map\BACKHOE_LOADER_Green.png" />
+    <Content Include="assets\images\Map\BACKHOE_LOADER_Orange.png" />
+    <Content Include="assets\images\Map\BACKHOE_LOADER_Other.png" />
+    <Content Include="assets\images\Map\BACKHOE_LOADER_Red.png" />
+    <Content Include="assets\images\Map\BACKHOE_LOADER_Yellow.png" />
+    <Content Include="assets\images\Map\Blue.gif" />
+    <Content Include="assets\images\Map\Blue.png" />
+    <Content Include="assets\images\Map\BULLDOZER_Blue.png" />
+    <Content Include="assets\images\Map\BULLDOZER_Customer.png" />
+    <Content Include="assets\images\Map\BULLDOZER_Gray.png" />
+    <Content Include="assets\images\Map\BULLDOZER_Green.png" />
+    <Content Include="assets\images\Map\BULLDOZER_Orange.png" />
+    <Content Include="assets\images\Map\BULLDOZER_Other.png" />
+    <Content Include="assets\images\Map\BULLDOZER_Red.png" />
+    <Content Include="assets\images\Map\BULLDOZER_Yellow.png" />
+    <Content Include="assets\images\Map\ClusterMaker\m1.png" />
+    <Content Include="assets\images\Map\ClusterMaker\m2.png" />
+    <Content Include="assets\images\Map\ClusterMaker\m3.png" />
+    <Content Include="assets\images\Map\ClusterMaker\m4.png" />
+    <Content Include="assets\images\Map\ClusterMaker\m5.png" />
+    <Content Include="assets\images\Map\CRANE_Blue.png" />
+    <Content Include="assets\images\Map\CRANE_Customer.png" />
+    <Content Include="assets\images\Map\CRANE_Gray.png" />
+    <Content Include="assets\images\Map\CRANE_Green.png" />
+    <Content Include="assets\images\Map\CRANE_Orange.png" />
+    <Content Include="assets\images\Map\CRANE_Other.png" />
+    <Content Include="assets\images\Map\CRANE_Red.png" />
+    <Content Include="assets\images\Map\CRANE_Yellow.png" />
+    <Content Include="assets\images\Map\dozer.png" />
+    <Content Include="assets\images\Map\DUMP_TRUCK_Blue.png" />
+    <Content Include="assets\images\Map\DUMP_TRUCK_Customer.png" />
+    <Content Include="assets\images\Map\DUMP_TRUCK_Gray.png" />
+    <Content Include="assets\images\Map\DUMP_TRUCK_Green.png" />
+    <Content Include="assets\images\Map\DUMP_TRUCK_Orange.png" />
+    <Content Include="assets\images\Map\DUMP_TRUCK_Other.png" />
+    <Content Include="assets\images\Map\DUMP_TRUCK_Red.png" />
+    <Content Include="assets\images\Map\DUMP_TRUCK_Yellow.png" />
+    <Content Include="assets\images\Map\ELECTRIC_DRIVE_TRUCK_Blue.png" />
+    <Content Include="assets\images\Map\ELECTRIC_DRIVE_TRUCK_Customer.png" />
+    <Content Include="assets\images\Map\ELECTRIC_DRIVE_TRUCK_Gray.png" />
+    <Content Include="assets\images\Map\ELECTRIC_DRIVE_TRUCK_Green.png" />
+    <Content Include="assets\images\Map\ELECTRIC_DRIVE_TRUCK_Orange.png" />
+    <Content Include="assets\images\Map\ELECTRIC_DRIVE_TRUCK_Other.png" />
+    <Content Include="assets\images\Map\ELECTRIC_DRIVE_TRUCK_Red.png" />
+    <Content Include="assets\images\Map\ELECTRIC_DRIVE_TRUCK_Yellow.png" />
+    <Content Include="assets\images\Map\ENVIRONMENT_RECYCLER_Blue.png" />
+    <Content Include="assets\images\Map\ENVIRONMENT_RECYCLER_Customer.png" />
+    <Content Include="assets\images\Map\ENVIRONMENT_RECYCLER_Gray.png" />
+    <Content Include="assets\images\Map\ENVIRONMENT_RECYCLER_Green.png" />
+    <Content Include="assets\images\Map\ENVIRONMENT_RECYCLER_Orange.png" />
+    <Content Include="assets\images\Map\ENVIRONMENT_RECYCLER_Other.png" />
+    <Content Include="assets\images\Map\ENVIRONMENT_RECYCLER_Red.png" />
+    <Content Include="assets\images\Map\ENVIRONMENT_RECYCLER_Yellow.png" />
+    <Content Include="assets\images\Map\FORKLIFT_EASYMAINTENANCE__Blue.png" />
+    <Content Include="assets\images\Map\FORKLIFT_EASYMAINTENANCE__Customer.png" />
+    <Content Include="assets\images\Map\FORKLIFT_EASYMAINTENANCE__Gray.png" />
+    <Content Include="assets\images\Map\FORKLIFT_EASYMAINTENANCE__Green.png" />
+    <Content Include="assets\images\Map\FORKLIFT_EASYMAINTENANCE__Orange.png" />
+    <Content Include="assets\images\Map\FORKLIFT_EASYMAINTENANCE__Other.png" />
+    <Content Include="assets\images\Map\FORKLIFT_EASYMAINTENANCE__Red.png" />
+    <Content Include="assets\images\Map\FORKLIFT_EASYMAINTENANCE__Yellow.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC_FE__Blue.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC_FE__Customer.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC_FE__Gray.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC_FE__Green.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC_FE__Orange.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC_FE__Other.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC_FE__Red.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC_FE__Yellow.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC__Blue.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC__Customer.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC__Gray.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC__Green.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC__Orange.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC__Other.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC__Red.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ELECTRIC__Yellow.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ENGINE__Blue.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ENGINE__Customer.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ENGINE__Gray.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ENGINE__Green.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ENGINE__Orange.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ENGINE__Other.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ENGINE__Red.png" />
+    <Content Include="assets\images\Map\FORKLIFT_ENGINE__Yellow.png" />
+    <Content Include="assets\images\Map\Gray.png" />
+    <Content Include="assets\images\Map\Green.png" />
+    <Content Include="assets\images\Map\HYDRAULIC_EXCAVATOR_Blue.png" />
+    <Content Include="assets\images\Map\HYDRAULIC_EXCAVATOR_Customer.png" />
+    <Content Include="assets\images\Map\HYDRAULIC_EXCAVATOR_Gray.png" />
+    <Content Include="assets\images\Map\HYDRAULIC_EXCAVATOR_Green.png" />
+    <Content Include="assets\images\Map\HYDRAULIC_EXCAVATOR_Orange.png" />
+    <Content Include="assets\images\Map\HYDRAULIC_EXCAVATOR_Other.png" />
+    <Content Include="assets\images\Map\HYDRAULIC_EXCAVATOR_Red.png" />
+    <Content Include="assets\images\Map\HYDRAULIC_EXCAVATOR_Yellow.png" />
+    <Content Include="assets\images\Map\MINI_EXCAVATOR_Blue.png" />
+    <Content Include="assets\images\Map\MINI_EXCAVATOR_Customer.png" />
+    <Content Include="assets\images\Map\MINI_EXCAVATOR_Gray.png" />
+    <Content Include="assets\images\Map\MINI_EXCAVATOR_Green.png" />
+    <Content Include="assets\images\Map\MINI_EXCAVATOR_Orange.png" />
+    <Content Include="assets\images\Map\MINI_EXCAVATOR_Other.png" />
+    <Content Include="assets\images\Map\MINI_EXCAVATOR_Red.png" />
+    <Content Include="assets\images\Map\MINI_EXCAVATOR_Yellow.png" />
+    <Content Include="assets\images\Map\MINI_WHEEL_LOADER_Blue.png" />
+    <Content Include="assets\images\Map\MINI_WHEEL_LOADER_Customer.png" />
+    <Content Include="assets\images\Map\MINI_WHEEL_LOADER_Gray.png" />
+    <Content Include="assets\images\Map\MINI_WHEEL_LOADER_Green.png" />
+    <Content Include="assets\images\Map\MINI_WHEEL_LOADER_Orange.png" />
+    <Content Include="assets\images\Map\MINI_WHEEL_LOADER_Other.png" />
+    <Content Include="assets\images\Map\MINI_WHEEL_LOADER_Red.png" />
+    <Content Include="assets\images\Map\MINI_WHEEL_LOADER_Yellow.png" />
+    <Content Include="assets\images\Map\MOTOR_GRADER_Blue.png" />
+    <Content Include="assets\images\Map\MOTOR_GRADER_Customer.png" />
+    <Content Include="assets\images\Map\MOTOR_GRADER_Gray.png" />
+    <Content Include="assets\images\Map\MOTOR_GRADER_Green.png" />
+    <Content Include="assets\images\Map\MOTOR_GRADER_Orange.png" />
+    <Content Include="assets\images\Map\MOTOR_GRADER_Other.png" />
+    <Content Include="assets\images\Map\MOTOR_GRADER_Red.png" />
+    <Content Include="assets\images\Map\MOTOR_GRADER_Yellow.png" />
+    <Content Include="assets\images\Map\Orange.png" />
+    <Content Include="assets\images\Map\OTHERS_Blue.png" />
+    <Content Include="assets\images\Map\OTHERS_Customer.png" />
+    <Content Include="assets\images\Map\OTHERS_Gray.png" />
+    <Content Include="assets\images\Map\OTHERS_Green.png" />
+    <Content Include="assets\images\Map\OTHERS_Orange.png" />
+    <Content Include="assets\images\Map\OTHERS_Other.png" />
+    <Content Include="assets\images\Map\OTHERS_Red.png" />
+    <Content Include="assets\images\Map\OTHERS_Yellow.png" />
+    <Content Include="assets\images\Map\Red.png" />
+    <Content Include="assets\images\Map\ROAD_MACHINERY__EXCEPT_M_G__Blue.png" />
+    <Content Include="assets\images\Map\ROAD_MACHINERY__EXCEPT_M_G__Customer.png" />
+    <Content Include="assets\images\Map\ROAD_MACHINERY__EXCEPT_M_G__Gray.png" />
+    <Content Include="assets\images\Map\ROAD_MACHINERY__EXCEPT_M_G__Green.png" />
+    <Content Include="assets\images\Map\ROAD_MACHINERY__EXCEPT_M_G__Orange.png" />
+    <Content Include="assets\images\Map\ROAD_MACHINERY__EXCEPT_M_G__Other.png" />
+    <Content Include="assets\images\Map\ROAD_MACHINERY__EXCEPT_M_G__Red.png" />
+    <Content Include="assets\images\Map\ROAD_MACHINERY__EXCEPT_M_G__Yellow.png" />
+    <Content Include="assets\images\Map\SERVICE_VEHICLE_Blue.png" />
+    <Content Include="assets\images\Map\SERVICE_VEHICLE_Customer.png" />
+    <Content Include="assets\images\Map\SERVICE_VEHICLE_Gray.png" />
+    <Content Include="assets\images\Map\SERVICE_VEHICLE_Green.png" />
+    <Content Include="assets\images\Map\SERVICE_VEHICLE_Orange.png" />
+    <Content Include="assets\images\Map\SERVICE_VEHICLE_Other.png" />
+    <Content Include="assets\images\Map\SERVICE_VEHICLE_Red.png" />
+    <Content Include="assets\images\Map\SERVICE_VEHICLE_Yellow.png" />
+    <Content Include="assets\images\Map\SKID_STEER_LOADER_Blue.png" />
+    <Content Include="assets\images\Map\SKID_STEER_LOADER_Customer.png" />
+    <Content Include="assets\images\Map\SKID_STEER_LOADER_Gray.png" />
+    <Content Include="assets\images\Map\SKID_STEER_LOADER_Green.png" />
+    <Content Include="assets\images\Map\SKID_STEER_LOADER_Orange.png" />
+    <Content Include="assets\images\Map\SKID_STEER_LOADER_Other.png" />
+    <Content Include="assets\images\Map\SKID_STEER_LOADER_Red.png" />
+    <Content Include="assets\images\Map\SKID_STEER_LOADER_Yellow.png" />
+    <Content Include="assets\images\Map\TELESCOPIC_HANDLER_Blue.png" />
+    <Content Include="assets\images\Map\TELESCOPIC_HANDLER_Customer.png" />
+    <Content Include="assets\images\Map\TELESCOPIC_HANDLER_Gray.png" />
+    <Content Include="assets\images\Map\TELESCOPIC_HANDLER_Green.png" />
+    <Content Include="assets\images\Map\TELESCOPIC_HANDLER_Orange.png" />
+    <Content Include="assets\images\Map\TELESCOPIC_HANDLER_Other.png" />
+    <Content Include="assets\images\Map\TELESCOPIC_HANDLER_Red.png" />
+    <Content Include="assets\images\Map\TELESCOPIC_HANDLER_Yellow.png" />
+    <Content Include="assets\images\Map\WHEEL_LOADER_Blue.png" />
+    <Content Include="assets\images\Map\WHEEL_LOADER_Customer.png" />
+    <Content Include="assets\images\Map\WHEEL_LOADER_Gray.png" />
+    <Content Include="assets\images\Map\WHEEL_LOADER_Green.png" />
+    <Content Include="assets\images\Map\WHEEL_LOADER_Orange.png" />
+    <Content Include="assets\images\Map\WHEEL_LOADER_Other.png" />
+    <Content Include="assets\images\Map\WHEEL_LOADER_Red.png" />
+    <Content Include="assets\images\Map\WHEEL_LOADER_Yellow.png" />
+    <Content Include="assets\images\Map\Yellow.png" />
+    <Content Include="assets\images\menu-toggler.png" />
+    <Content Include="assets\images\Message.svg" />
+    <Content Include="assets\images\notification.jpg" />
+    <Content Include="assets\images\remove-icon-small.png" />
+    <Content Include="assets\images\upload.png" />
+    <Content Include="assets\js\ApplicationSettings.js" />
+    <Content Include="assets\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\custom.min.js" />
+    <Content Include="assets\js\dist_item\custom_notification.js" />
+    <Content Include="assets\js\jquery.dataTables.min.js" />
+    <Content Include="assets\js\lib\bootstrap-multiselect.js" />
+    <Content Include="assets\js\lib\bootstrap.min.js" />
+    <Content Include="assets\js\lib\dataTables.responsive.min.js" />
+    <Content Include="assets\js\lib\jquery.dataTables.min.js" />
+    <Content Include="assets\js\lib\jquery.min.js" />
+    <Content Include="assets\js\lib\jquery.scrolling-tabs.js" />
+    <Content Include="assets\js\lib\moment.min.js" />
+    <Content Include="assets\js\lib\popper.min.js" />
+    <Content Include="assets\js\lib\select2.min.js" />
+    <Content Include="assets\js\lib\signature_pad.js" />
+    <Content Include="assets\js\lib\validator.min.js" />
+    <Content Include="assets\js\moment.min.js" />
+    <Content Include="assets\js\summernote-languages.js" />
+    <Content Include="assets\js\summernote.js" />
+    <Content Include="assets\js\timeout-dialog.js" />
+    <Content Include="Content\bootstrap-switch.min.css" />
+    <Content Include="Content\Default\loading-image.gif" />
+    <Content Include="Content\Default\sprite.png" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Iconmoon.css" />
+    <Content Include="Content\Iconmoon1.css" />
+    <Content Include="Content\kendo.common.min.css" />
+    <Content Include="Content\kendo.material.min.css" />
+    <Content Include="Content\Material\loading-image.gif" />
+    <Content Include="Content\Material\loading.gif" />
+    <Content Include="Content\Material\sprite.png" />
+    <Content Include="Content\Material\sprite_2x.png" />
+    <Content Include="Content\Material\sprite_kpi.png" />
+    <Content Include="Content\Material\sprite_kpi_2x.png" />
+    <Content Include="Content\theme\32px.png" />
+    <Content Include="Content\theme\32px_line.png" />
+    <Content Include="Content\theme\32px_original.png" />
+    <Content Include="Content\theme\40px.png" />
+    <Content Include="Content\theme\throbber.gif" />
+    <Content Include="assets\css\lib\timeout-dialog.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\icomoon.svg" />
+    <Content Include="fonts\open_sans\OpenSans-Bold.svg" />
+    <Content Include="fonts\open_sans\OpenSans-BoldItalic.svg" />
+    <Content Include="fonts\open_sans\OpenSans-Extrabold.svg" />
+    <Content Include="fonts\open_sans\OpenSans-ExtraboldItalic.svg" />
+    <Content Include="fonts\open_sans\OpenSans-Italic.svg" />
+    <Content Include="fonts\open_sans\OpenSans-Light.svg" />
+    <Content Include="fonts\open_sans\OpenSans-Semibold.svg" />
+    <Content Include="fonts\open_sans\OpenSans-SemiboldItalic.svg" />
+    <Content Include="fonts\open_sans\OpenSans.svg" />
+    <Content Include="fonts\open_sans\OpenSansLight-Italic.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\404.png" />
+    <Content Include="Images\accordion-plusminus.png" />
+    <Content Include="Images\ajax-loading.gif" />
+    <Content Include="Images\ajax-modal-loading.gif" />
+    <Content Include="Images\Appicon.jpg" />
+    <Content Include="Images\Appicon_Open.jpg" />
+    <Content Include="Images\avatar.png" />
+    <Content Include="Images\bg-pattern.png" />
+    <Content Include="Images\Brandlogo.svg" />
+    <Content Include="Images\choose.png" />
+    <Content Include="Images\Components\800_loader_top.gif" />
+    <Content Include="Images\D37PXi-23-small.gif" />
+    <Content Include="Images\D37PXi-23.gif" />
+    <Content Include="Images\datatable-row-openclose.png" />
+    <Content Include="Images\Distributor\1.png" />
+    <Content Include="Images\Distributor\5160.png" />
+    <Content Include="Images\Distributor\distributor-noimage.png" />
+    <Content Include="Images\district_w.png" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\input-spinner.gif" />
+    <Content Include="Images\Komatsu-Header-Band-1.png" />
+    <Content Include="Images\Komatsu-Layout-Bg.jpg" />
+    <Content Include="Images\komatsu.gif" />
+    <Content Include="Images\Komatsu2016.jpg" />
+    <Content Include="Images\komatsu_hollow.png" />
+    <Content Include="Images\komatsu_hollow_yellow.png" />
+    <Content Include="Images\Komatsu_User-Registration_BG-Image.png" />
+    <Content Include="Images\komatsu_user_reg_for_svg.svg" />
+    <Content Include="Images\loader-gif-128.gif" />
+    <Content Include="Images\loading-spinner-blue.gif" />
+    <Content Include="Images\loading-spinner-default.gif" />
+    <Content Include="Images\loading-spinner-grey.gif" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\Maintenancepage.png" />
+    <Content Include="Images\Models\800_loader_side.gif" />
+    <Content Include="Images\Models\800_loader_top.gif" />
+    <Content Include="Images\motor-graders-small.gif" />
+    <Content Include="Images\motor-graders.gif" />
+    <Content Include="Images\MultiLingualSupport\Administration\AccessDeny.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\AppListing.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\Customer Support.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\Customer.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\Dashboard.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\DMSCustomer Upload.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\DMSMachine Upload.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\DMSWorkOrder Upload.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\GeoFence.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\Help Content.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\Languages.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\Machine.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\Manage Redis Cache.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\ManageBusinessSegment.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\ManageDivision.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\Notification Engine.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\Organization.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\RolesAndClaims.png" />
+    <Content Include="Images\MultiLingualSupport\Administration\User.png" />
+    <Content Include="Images\MultiLingualSupport\Customer Support\CustomerSupport.png" />
+    <Content Include="Images\MultiLingualSupport\Dashboard\Alerts.png" />
+    <Content Include="Images\MultiLingualSupport\Dashboard\AlertSetting.png" />
+    <Content Include="Images\MultiLingualSupport\Dashboard\ClaimsSetting.png" />
+    <Content Include="Images\MultiLingualSupport\Dashboard\DashboardSettings.png" />
+    <Content Include="Images\MultiLingualSupport\Dashboard\DatasourceSetting.png" />
+    <Content Include="Images\MultiLingualSupport\Dashboard\HomeIndex.png" />
+    <Content Include="Images\MultiLingualSupport\Dashboard\NotificationListing.png" />
+    <Content Include="Images\MultiLingualSupport\Dashboard\QuickSearchOptions.png" />
+    <Content Include="Images\MultiLingualSupport\Dashboard\Share.png" />
+    <Content Include="Images\MultiLingualSupport\Dashboard\Subscription.png" />
+    <Content Include="Images\MultiLingualSupport\Dashboard\TemplateListing.png" />
+    <Content Include="Images\MultiLingualSupport\Distributor Portal\AccessDenied.png" />
+    <Content Include="Images\MultiLingualSupport\Distributor Portal\BellInbox.png" />
+    <Content Include="Images\MultiLingualSupport\Distributor Portal\CommonToolBar.png" />
+    <Content Include="Images\MultiLingualSupport\Distributor Portal\ConsentForm.png" />
+    <Content Include="Images\MultiLingualSupport\Distributor Portal\Home.png" />
+    <Content Include="Images\MultiLingualSupport\Distributor Portal\Layout.png" />
+    <Content Include="Images\MultiLingualSupport\Distributor Portal\Timeout.png" />
+    <Content Include="Images\MultiLingualSupport\Distributor Portal\UnAuthorized.png" />
+    <Content Include="Images\MultiLingualSupport\Distributor Portal\UnderManitanence.png" />
+    <Content Include="Images\MultiLingualSupport\Distributor Portal\UserPreferences.png" />
+    <Content Include="Images\MultiLingualSupport\Distributor Portal\UserProfile.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\ContractMaster.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\MachineContract.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\MachineContractDetail.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\PMShedule.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\PMVisitConfiguration.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\PMVisitDashboard.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\TargetMachine.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\VisitPlanning.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\VisitReportCommentsMaintenance.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\WorkOrder.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\WorkOrderProcessing.png" />
+    <Content Include="Images\MultiLingualSupport\PM Visit\WorkOrderStatusMaintenance.png" />
+    <Content Include="Images\NoAccess-1.gif" />
+    <Content Include="Images\NoAccess.gif" />
+    <Content Include="Images\noimage.png" />
+    <Content Include="Images\NoImage_2.png" />
+    <Content Include="Images\overlay-icon.png" />
+    <Content Include="Images\Pagenofound.gif" />
+    <Content Include="Images\PC240LC-11-small.gif" />
+    <Content Include="Images\PC240LC-11.gif" />
+    <Content Include="Images\portlet-collapse-icon-white.png" />
+    <Content Include="Images\portlet-collapse-icon.png" />
+    <Content Include="Images\portlet-config-icon-white.png" />
+    <Content Include="Images\portlet-config-icon.png" />
+    <Content Include="Images\portlet-expand-icon-white.png" />
+    <Content Include="Images\portlet-expand-icon.png" />
+    <Content Include="Images\portlet-reload-icon-white.png" />
+    <Content Include="Images\portlet-reload-icon.png" />
+    <Content Include="Images\portlet-remove-icon-white.png" />
+    <Content Include="Images\portlet-remove-icon.png" />
+    <Content Include="Images\Product\Big\730E.jpg" />
+    <Content Include="Images\Product\Big\830E.jpg" />
+    <Content Include="Images\Product\Big\860E.jpg" />
+    <Content Include="Images\Product\Big\930E.jpg" />
+    <Content Include="Images\Product\Big\960E.jpg" />
+    <Content Include="Images\Product\Big\AE50.jpg" />
+    <Content Include="Images\Product\Big\AM50.jpg" />
+    <Content Include="Images\Product\Big\AX50.jpg" />
+    <Content Include="Images\Product\Big\BBX50.jpg" />
+    <Content Include="Images\Product\Big\BX50.jpg" />
+    <Content Include="Images\Product\Big\BX50seriesIC Pneumatic.jpg" />
+    <Content Include="Images\Product\Big\CX50.jpg" />
+    <Content Include="Images\Product\Big\D1555AX.jpg" />
+    <Content Include="Images\Product\Big\D155AX.jpg" />
+    <Content Include="Images\Product\Big\D155AXi.jpg" />
+    <Content Include="Images\Product\Big\D275AX.jpg" />
+    <Content Include="Images\Product\Big\D375A.jpg" />
+    <Content Include="Images\Product\Big\D375AX.jpg" />
+    <Content Include="Images\Product\Big\D37EX.jpg" />
+    <Content Include="Images\Product\Big\D37EXi.jpg" />
+    <Content Include="Images\Product\Big\D37PX.jpg" />
+    <Content Include="Images\Product\Big\D37PXi.jpg" />
+    <Content Include="Images\Product\Big\D39EX.jpg" />
+    <Content Include="Images\Product\Big\D39EXi.jpg" />
+    <Content Include="Images\Product\Big\D39PX.jpg" />
+    <Content Include="Images\Product\Big\D39PXi.jpg" />
+    <Content Include="Images\Product\Big\D475A.jpg" />
+    <Content Include="Images\Product\Big\D51EXi.jpg" />
+    <Content Include="Images\Product\Big\D51PXi.jpg" />
+    <Content Include="Images\Product\Big\D61EX.jpg" />
+    <Content Include="Images\Product\Big\D61EXI.jpg" />
+    <Content Include="Images\Product\Big\D61PX.jpg" />
+    <Content Include="Images\Product\Big\D61PXI.jpg" />
+    <Content Include="Images\Product\Big\D65EX.jpg" />
+    <Content Include="Images\Product\Big\D65EXi.jpg" />
+    <Content Include="Images\Product\Big\D65PX.jpg" />
+    <Content Include="Images\Product\Big\D65PXi.jpg" />
+    <Content Include="Images\Product\Big\D65WX.jpg" />
+    <Content Include="Images\Product\Big\D85EX.jpg" />
+    <Content Include="Images\Product\Big\D85PX.jpg" />
+    <Content Include="Images\Product\Big\DX50.jpg" />
+    <Content Include="Images\Product\Big\EX50.jpg" />
+    <Content Include="Images\Product\Big\FH40.jpg" />
+    <Content Include="Images\Product\Big\fleet-noimage.png" />
+    <Content Include="Images\Product\Big\FR50.jpg" />
+    <Content Include="Images\Product\Big\GD655-6.jpg" />
+    <Content Include="Images\Product\Big\GD655.jpg" />
+    <Content Include="Images\Product\Big\HB215LC.jpg" />
+    <Content Include="Images\Product\Big\HD1500.jpg" />
+    <Content Include="Images\Product\Big\HD325.jpg" />
+    <Content Include="Images\Product\Big\HD405.jpg" />
+    <Content Include="Images\Product\Big\HD465.jpg" />
+    <Content Include="Images\Product\Big\HD605.jpg" />
+    <Content Include="Images\Product\Big\HD785.jpg" />
+    <Content Include="Images\Product\Big\HM300.jpg" />
+    <Content Include="Images\Product\Big\HM400.jpg" />
+    <Content Include="Images\Product\Big\KomtraxPlus\730E.png" />
+    <Content Include="Images\Product\Big\KomtraxPlus\830E.png" />
+    <Content Include="Images\Product\Big\KomtraxPlus\D375AX.png" />
+    <Content Include="Images\Product\Big\KomtraxPlus\D475A.png" />
+    <Content Include="Images\Product\Big\KomtraxPlus\HD605.png" />
+    <Content Include="Images\Product\Big\KomtraxPlus\HD785.png" />
+    <Content Include="Images\Product\Big\KomtraxPlus\PC1250LC.png" />
+    <Content Include="Images\Product\Big\KomtraxPlus\WA600.png" />
+    <Content Include="Images\Product\Big\KomtraxPlus\WA900.png" />
+    <Content Include="Images\Product\Big\KomtraxPlus\WD600.png" />
+    <Content Include="Images\Product\Big\Komtrax\D275AX.png" />
+    <Content Include="Images\Product\Big\Komtrax\PC300LC.png" />
+    <Content Include="Images\Product\Big\Komtrax\WA470.png" />
+    <Content Include="Images\Product\Big\Komtrax\WA500.png" />
+    <Content Include="Images\Product\Big\P170LC.jpg" />
+    <Content Include="Images\Product\Big\PC1250.jpg" />
+    <Content Include="Images\Product\Big\PC1250LC.jpg" />
+    <Content Include="Images\Product\Big\PC138USLC.jpg" />
+    <Content Include="Images\Product\Big\PC2000.jpg" />
+    <Content Include="Images\Product\Big\PC200LC.jpg" />
+    <Content Include="Images\Product\Big\PC210LC.jpg" />
+    <Content Include="Images\Product\Big\PC210LCi.jpg" />
+    <Content Include="Images\Product\Big\PC228USLC.jpg" />
+    <Content Include="Images\Product\Big\PC240LC.jpg" />
+    <Content Include="Images\Product\Big\PC27MR.jpg" />
+    <Content Include="Images\Product\Big\PC290LC.jpg" />
+    <Content Include="Images\Product\Big\PC3000.jpg" />
+    <Content Include="Images\Product\Big\PC35MR.jpg" />
+    <Content Include="Images\Product\Big\PC360LC.jpg" />
+    <Content Include="Images\Product\Big\PC390LC.jpg" />
+    <Content Include="Images\Product\Big\PC4000.jpg" />
+    <Content Include="Images\Product\Big\PC45MR %282%29.jpg" />
+    <Content Include="Images\Product\Big\PC45MR.jpg" />
+    <Content Include="Images\Product\Big\PC490LC.jpg" />
+    <Content Include="Images\Product\Big\PC5500.jpg" />
+    <Content Include="Images\Product\Big\PC55MR.jpg" />
+    <Content Include="Images\Product\Big\PC600LC.jpg" />
+    <Content Include="Images\Product\Big\PC650LC.jpg" />
+    <Content Include="Images\Product\Big\PC650LC.png" />
+    <Content Include="Images\Product\Big\PC78US.jpg" />
+    <Content Include="Images\Product\Big\PC8000.jpg" />
+    <Content Include="Images\Product\Big\PC800LC.jpg" />
+    <Content Include="Images\Product\Big\PC88MR.jpg" />
+    <Content Include="Images\Product\Big\sk714-5.jpg" />
+    <Content Include="Images\Product\Big\SK714.jpg" />
+    <Content Include="Images\Product\Big\SK820.jpg" />
+    <Content Include="Images\Product\Big\SK820_THUMB.jpg" />
+    <Content Include="Images\Product\Big\WA1200.jpg" />
+    <Content Include="Images\Product\Big\WA200.jpg" />
+    <Content Include="Images\Product\Big\WA270.jpg" />
+    <Content Include="Images\Product\Big\WA320.jpg" />
+    <Content Include="Images\Product\Big\WA380.jpg" />
+    <Content Include="Images\Product\Big\WA470.jpg" />
+    <Content Include="Images\Product\Big\WA500.jpg" />
+    <Content Include="Images\Product\Big\WA600.jpg" />
+    <Content Include="Images\Product\Big\WA800.jpg" />
+    <Content Include="Images\Product\Big\WA900.jpg" />
+    <Content Include="Images\Product\Big\WD600.jpg" />
+    <Content Include="Images\Product\Medium\fleet-noimage.png" />
+    <Content Include="Images\Product\Medium\KomtraxPlus\830E-1AC.png" />
+    <Content Include="Images\Product\Medium\KomtraxPlus\PC1250LC-8.png" />
+    <Content Include="Images\Product\Small\fleet-noimage.png" />
+    <Content Include="Images\Product\Small\KomtraxPlus\830E-1AC.png" />
+    <Content Include="Images\Product\Small\KomtraxPlus\PC1250LC-8.png" />
+    <Content Include="Images\Product\Thumb\fleet-noimage.png" />
+    <Content Include="Images\Product\Thumb\KomtraxPlus\830E-1AC.png" />
+    <Content Include="Images\Product\Thumb\KomtraxPlus\D475A-5.png" />
+    <Content Include="Images\Product\Thumb\KomtraxPlus\HD785-7.png" />
+    <Content Include="Images\Product\Thumb\KomtraxPlus\PC1250LC-8.png" />
+    <Content Include="Images\Product\Thumb\KomtraxPlus\WD600-6.png" />
+    <Content Include="Images\remove-icon-small.png" />
+    <Content Include="Images\sidebar-toggler-inverse.png" />
+    <Content Include="Images\sidebar-toggler.png" />
+    <Content Include="Images\sidebar_toggler_icon_darkblue.png" />
+    <Content Include="Images\switch.png" />
+    <Content Include="Images\syncfusion-icons-white.png" />
+    <Content Include="Images\syncfusion-icons.png" />
+    <Content Include="Images\timeout-icon.png" />
+    <Content Include="Images\u1013.png" />
+    <Content Include="Images\Under-Construction %28002%29.gif" />
+    <Content Include="Images\upload.png" />
+    <Content Include="Images\UserProfile\1.png" />
+    <Content Include="Images\UserProfile\user-noimage.png" />
+    <Content Include="Images\WA800-3-small.gif" />
+    <Content Include="Images\WA800-3.gif" />
+    <Content Include="img\accordion-plusminus.png" />
+    <Content Include="img\ajax-loading.gif" />
+    <Content Include="img\ajax-modal-loading.gif" />
+    <Content Include="img\menu-toggler.png" />
+    <Content Include="img\overlay-icon.png" />
+    <Content Include="img\portlet-collapse-icon-white.png" />
+    <Content Include="img\portlet-collapse-icon.png" />
+    <Content Include="img\portlet-config-icon-white.png" />
+    <Content Include="img\portlet-config-icon.png" />
+    <Content Include="img\portlet-expand-icon-white.png" />
+    <Content Include="img\portlet-expand-icon.png" />
+    <Content Include="img\portlet-reload-icon-white.png" />
+    <Content Include="img\portlet-reload-icon.png" />
+    <Content Include="img\portlet-remove-icon-white.png" />
+    <Content Include="img\portlet-remove-icon.png" />
+    <Content Include="img\remove-icon-small.png" />
+    <Content Include="img\sidebar-toggler-inverse.png" />
+    <Content Include="img\sidebar-toggler.png" />
+    <Content Include="img\sidebar_toggler_icon_darkblue.png" />
+    <Content Include="img\small-switch.png" />
+    <Content Include="img\syncfusion-icons-white.png" />
+    <Content Include="img\syncfusion-icons.png" />
+    <Content Include="Scripts\amcharts.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap-dialog.min.js" />
+    <Content Include="Scripts\bootstrap-switch.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="assets\fonts\roboto\Roboto-Bold.eot" />
+    <Content Include="assets\fonts\roboto\Roboto-Bold.ttf" />
+    <Content Include="assets\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="assets\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="assets\fonts\roboto\Roboto-Medium.eot" />
+    <Content Include="assets\fonts\roboto\Roboto-Medium.ttf" />
+    <Content Include="assets\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="assets\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="assets\fonts\roboto\Roboto-Regular.eot" />
+    <Content Include="assets\fonts\roboto\Roboto-Regular.ttf" />
+    <Content Include="assets\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="assets\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\icomoon.eot" />
+    <Content Include="assets\fonts\icomoon.ttf" />
+    <Content Include="assets\fonts\icomoon.woff" />
+    <Content Include="App_Data\File\CustomerManagement_File.csv" />
+    <Content Include="App_Data\File\MachineManagement_File.csv" />
+    <Content Include="App_Data\DistributorsCustomerList.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\DistributorsCustomersMachineList.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\File\WorkOrderImportCSV.csv" />
+    <Content Include="assets\fonts\ico-moon\icomoon.eot" />
+    <Content Include="assets\fonts\ico-moon\icomoon.ttf" />
+    <Content Include="assets\fonts\ico-moon\icomoon.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="KBA.Administration.Web.ruleset" />
+    <Content Include="assets\fonts\summernote.eot" />
+    <Content Include="assets\fonts\summernote.ttf" />
+    <Content Include="assets\fonts\summernote.woff" />
+    <Content Include="assets\fonts\icomoon\icomoon.eot" />
+    <Content Include="assets\fonts\icomoon\icomoon.ttf" />
+    <Content Include="assets\fonts\icomoon\icomoon.woff" />
+    <Content Include="assets\fonts\icomoon-2\icomoon.eot" />
+    <Content Include="assets\fonts\icomoon-2\icomoon.ttf" />
+    <Content Include="assets\fonts\icomoon-2\icomoon.woff" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Bold.eot" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Bold.ttf" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Bold.woff" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Bold.woff2" />
+    <Content Include="assets\fonts\open_sans\OpenSans-BoldItalic.eot" />
+    <Content Include="assets\fonts\open_sans\OpenSans-BoldItalic.ttf" />
+    <Content Include="assets\fonts\open_sans\OpenSans-BoldItalic.woff" />
+    <Content Include="assets\fonts\open_sans\OpenSans-BoldItalic.woff2" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Extrabold.eot" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Extrabold.ttf" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Extrabold.woff" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Extrabold.woff2" />
+    <Content Include="assets\fonts\open_sans\OpenSans-ExtraboldItalic.eot" />
+    <Content Include="assets\fonts\open_sans\OpenSans-ExtraboldItalic.ttf" />
+    <Content Include="assets\fonts\open_sans\OpenSans-ExtraboldItalic.woff" />
+    <Content Include="assets\fonts\open_sans\OpenSans-ExtraboldItalic.woff2" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Italic.eot" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Italic.ttf" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Italic.woff" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Italic.woff2" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Light.eot" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Light.ttf" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Light.woff" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Light.woff2" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Semibold.eot" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Semibold.ttf" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Semibold.woff" />
+    <Content Include="assets\fonts\open_sans\OpenSans-Semibold.woff2" />
+    <Content Include="assets\fonts\open_sans\OpenSans-SemiboldItalic.eot" />
+    <Content Include="assets\fonts\open_sans\OpenSans-SemiboldItalic.ttf" />
+    <Content Include="assets\fonts\open_sans\OpenSans-SemiboldItalic.woff" />
+    <Content Include="assets\fonts\open_sans\OpenSans-SemiboldItalic.woff2" />
+    <Content Include="assets\fonts\open_sans\OpenSans.eot" />
+    <Content Include="assets\fonts\open_sans\OpenSans.ttf" />
+    <Content Include="assets\fonts\open_sans\OpenSans.woff" />
+    <Content Include="assets\fonts\open_sans\OpenSans.woff2" />
+    <Content Include="assets\fonts\open_sans\OpenSansLight-Italic.eot" />
+    <Content Include="assets\fonts\open_sans\OpenSansLight-Italic.ttf" />
+    <Content Include="assets\fonts\open_sans\OpenSansLight-Italic.woff" />
+    <Content Include="assets\fonts\open_sans\OpenSansLight-Italic.woff2" />
+    <Content Include="fonts\open_sans\OpenSans-Bold.eot" />
+    <Content Include="fonts\open_sans\OpenSans-Bold.ttf" />
+    <Content Include="fonts\open_sans\OpenSans-Bold.woff" />
+    <Content Include="fonts\open_sans\OpenSans-Bold.woff2" />
+    <Content Include="fonts\open_sans\OpenSans-BoldItalic.eot" />
+    <Content Include="fonts\open_sans\OpenSans-BoldItalic.ttf" />
+    <Content Include="fonts\open_sans\OpenSans-BoldItalic.woff" />
+    <Content Include="fonts\open_sans\OpenSans-BoldItalic.woff2" />
+    <Content Include="fonts\open_sans\OpenSans-Extrabold.eot" />
+    <Content Include="fonts\open_sans\OpenSans-Extrabold.ttf" />
+    <Content Include="fonts\open_sans\OpenSans-Extrabold.woff" />
+    <Content Include="fonts\open_sans\OpenSans-Extrabold.woff2" />
+    <Content Include="fonts\open_sans\OpenSans-ExtraboldItalic.eot" />
+    <Content Include="fonts\open_sans\OpenSans-ExtraboldItalic.ttf" />
+    <Content Include="fonts\open_sans\OpenSans-ExtraboldItalic.woff" />
+    <Content Include="fonts\open_sans\OpenSans-ExtraboldItalic.woff2" />
+    <Content Include="fonts\open_sans\OpenSans-Italic.eot" />
+    <Content Include="fonts\open_sans\OpenSans-Italic.ttf" />
+    <Content Include="fonts\open_sans\OpenSans-Italic.woff" />
+    <Content Include="fonts\open_sans\OpenSans-Italic.woff2" />
+    <Content Include="fonts\open_sans\OpenSans-Light.eot" />
+    <Content Include="fonts\open_sans\OpenSans-Light.ttf" />
+    <Content Include="fonts\open_sans\OpenSans-Light.woff" />
+    <Content Include="fonts\open_sans\OpenSans-Light.woff2" />
+    <Content Include="fonts\open_sans\OpenSans-Semibold.eot" />
+    <Content Include="fonts\open_sans\OpenSans-Semibold.ttf" />
+    <Content Include="fonts\open_sans\OpenSans-Semibold.woff" />
+    <Content Include="fonts\open_sans\OpenSans-Semibold.woff2" />
+    <Content Include="fonts\open_sans\OpenSans-SemiboldItalic.eot" />
+    <Content Include="fonts\open_sans\OpenSans-SemiboldItalic.ttf" />
+    <Content Include="fonts\open_sans\OpenSans-SemiboldItalic.woff" />
+    <Content Include="fonts\open_sans\OpenSans-SemiboldItalic.woff2" />
+    <Content Include="fonts\open_sans\OpenSans.eot" />
+    <Content Include="fonts\open_sans\OpenSans.ttf" />
+    <Content Include="fonts\open_sans\OpenSans.woff" />
+    <Content Include="fonts\open_sans\OpenSans.woff2" />
+    <Content Include="fonts\open_sans\OpenSansLight-Italic.eot" />
+    <Content Include="fonts\open_sans\OpenSansLight-Italic.ttf" />
+    <Content Include="fonts\open_sans\OpenSansLight-Italic.woff" />
+    <Content Include="fonts\open_sans\OpenSansLight-Italic.woff2" />
+    <Content Include="assets\js\dist_item\emailManage.json" />
+    <Content Include="assets\js\dist_item\getChannelProfiles.json" />
+    <Content Include="assets\js\dist_item\getSidebar.json" />
+    <Content Include="assets\js\dist_item\notificationHistory.json" />
+    <Content Include="assets\js\dist_item\notificationstatistics.json" />
+    <Content Include="assets\js\dist_item\notificationReview.json" />
+    <Content Include="Connected Services\Key Vault\ConnectedService.json" />
+    <Content Include="assets\js\dist_item\messengerManage.json" />
+    <Content Include="assets\js\dist_item\smsManage.json" />
+    <Content Include="assets\js\dist_item\whatsappManage.json" />
+    <Content Include="libman.json" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\daterangepicker.js" />
+    <Content Include="Scripts\geofenceCtrl.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Scripts\jquery.cropit.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.responsivetabs.js" />
+    <Content Include="Scripts\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jstree.min.js" />
+    <Content Include="Scripts\jszip.js" />
+    <Content Include="Scripts\jszip.min.js" />
+    <Content Include="Scripts\kendo.all.min.js" />
+    <Content Include="Scripts\kendo.listbox.min.js" />
+    <Content Include="Scripts\layout.min.js" />
+    <Content Include="Scripts\lz-string.js" />
+    <Content Include="Scripts\markerclusterer.js" />
+    <Content Include="Scripts\metronic.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.min.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\pie.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\scripts.js" />
+    <Content Include="Scripts\scripts.min.js" />
+    <Content Include="Scripts\serial.js" />
+    <Content Include="Views\NewUserRegistration\EmployeeUserRegistration.cshtml" />
+    <Content Include="Views\NotificationDashboard\NotificationDashboard.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <!--<Content Include="Web.Debug.config">
+     <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content> -->
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Company\CompanyAdministration.cshtml" />
+    <Content Include="Views\Company\CompanyListing.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Customer\AddRegisterMachine.cshtml" />
+    <Content Include="Views\Customer\CustomerAddNew.cshtml" />
+    <Content Include="Views\Customer\CustomerAdmin.cshtml" />
+    <Content Include="Views\Customer\CustomerERPListing.cshtml" />
+    <Content Include="Views\Customer\CustomerListing.cshtml" />
+    <Content Include="Views\Customer\CustomerListingNew.cshtml" />
+    <Content Include="Views\Customer\CustomerMaintenance.cshtml" />
+    <Content Include="Views\Customer\CustomerMerge.cshtml" />
+    <Content Include="Views\Customer\CustomerUpdateMaintenance.cshtml" />
+    <Content Include="Views\Customer\MachineAssociation.cshtml" />
+    <Content Include="Views\Customer\NewCustomerAdministration.cshtml" />
+    <Content Include="Views\Customer\ReportProblem.cshtml" />
+    <Content Include="Views\Customer\_AddRegisterMachine.cshtml" />
+    <Content Include="Views\Customer\_RegisterMachine.cshtml" />
+    <Content Include="Views\Department\AddDepartment.cshtml" />
+    <Content Include="Views\Department\ManageDepartment.cshtml" />
+    <Content Include="Views\DistributorERP\AddMachineManufacturerCode.cshtml" />
+    <Content Include="Views\DistributorERP\CustomerExclusions.cshtml" />
+    <Content Include="Views\DistributorERP\DistributorERPMaintenance.cshtml" />
+    <Content Include="Views\DistributorERP\MachineExclusions.cshtml" />
+    <Content Include="Views\DistributorERP\MachineManufacturer.cshtml" />
+    <Content Include="Views\DistributorERP\MachineManufacturers.cshtml" />
+    <Content Include="Views\DmsMachine\Index.cshtml" />
+    <Content Include="Views\Home\ActivationRequest.cshtml" />
+    <Content Include="Views\Home\DistributorErp.cshtml" />
+    <Content Include="Views\Home\ErrorPage.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\Inbox.cshtml" />
+    <Content Include="Views\Home\Mainlayout.cshtml" />
+    <Content Include="Views\Home\PageNotFound.cshtml" />
+    <Content Include="Views\Home\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Home\TermsOfUse.cshtml" />
+    <Content Include="Views\Home\UnAuthorized.cshtml" />
+    <Content Include="Views\Home\UserManuals.cshtml" />
+    <Content Include="Views\Location\LocationMaintenance.cshtml" />
+    <Content Include="Views\ManufacturerOptions\AddManufacturerCode.cshtml" />
+    <Content Include="Views\ManufacturerOptions\ManufacturerOptions.cshtml" />
+    <Content Include="Views\MyProfile\MyProfile.cshtml" />
+    <Content Include="Views\MyProfile\MyProfileCustomer.cshtml" />
+    <Content Include="Views\MyProfile\MyProfileDistributor.cshtml" />
+    <Content Include="Views\NewCustomerApproval\NewCustomerApproval.cshtml" />
+    <Content Include="Views\NewUserRegistration\NewUserRegistration.cshtml" />
+    <Content Include="Views\Role\AddRole.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Shared\_DashboardStats.cshtml" />
+    <Content Include="Views\UserAdministration\UserList.cshtml" />
+    <Content Include="Views\UserAdministration\_UserList.cshtml" />
+    <Content Include="Views\Role\Index1.cshtml" />
+    <Content Include="Views\Role\_GetClaimList.cshtml" />
+    <Content Include="Views\Role\RoleIndex.cshtml" />
+    <Content Include="Views\Shared\_UserProfile.cshtml" />
+    <Content Include="Views\Organization\_Organization.cshtml" />
+    <Content Include="Views\WorkOrderERP\Index.cshtml" />
+    <Content Include="Views\WorkOrderERP\_GetWorkOrderDetails.cshtml" />
+    <!--<Content Include="Web.DEV.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.QA.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.UAT.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content> -->
+    <Content Include="Views\Organization\EditOrganization.cshtml" />
+    <Content Include="Views\Organization\NewOrganization.cshtml" />
+    <Content Include="Views\Organization\OrganizationIndex.cshtml" />
+    <Content Include="Views\Organization\OrganizationNew_Old.cshtml" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.DEV.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.QA.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Home\ConsentForm.cshtml" />
+    <Content Include="Views\Shared\_LayoutAnonymous.cshtml" />
+    <Content Include="Views\Division\DivisionListing.cshtml" />
+    <Content Include="Views\Division\NewRegistrationDivision.cshtml" />
+    <Content Include="Views\Division\Division.cshtml" />
+    <Content Include="Views\BusinessSegment\BusinessSegmentListing.cshtml" />
+    <Content Include="Views\BusinessSegment\NewBusinessSegment.cshtml" />
+    <Content Include="Views\BusinessSegment\BusinessSegmentGrid.cshtml" />
+    <Content Include="Views\Organization\_OrganizationNew.cshtml" />
+    <Content Include="Views\AppListing\AppListingGrid.cshtml" />
+    <Content Include="Views\AllApps\OnBoardListing.cshtml" />
+    <Content Include="Views\AllApps\_OnBoardListing.cshtml" />
+    <Content Include="Views\AllApps\NewOnBoardRegistration.cshtml" />
+    <Content Include="Views\GeoFence\GeoFenceGrid.cshtml" />
+    <Content Include="Views\GeoFence\GeoFenceListing.cshtml" />
+    <Content Include="Views\GeoFence\NewGeoFence.cshtml" />
+    <Content Include="Views\Organization\_Organization_View.cshtml" />
+    <Content Include="Views\Home\HelpContentForm.cshtml" />
+    <Content Include="Views\notificationtemplate\notificationtemplate.cshtml" />
+    <Content Include="Views\Shared\_HelpContentLayout.cshtml" />
+    <Content Include="Views\Role\RoleOverwrittenGrid.cshtml" />
+    <Content Include="Web.PREPROD.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.PROD.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\PageNotFoundPartial.cshtml" />
+    <Content Include="Views\Settings\Languages.cshtml" />
+    <Content Include="Views\Settings\_Translatelanguage.cshtml" />
+    <Content Include="Views\RedisCache\RedisCache.cshtml" />
+    <Content Include="Views\AllApps\AppHealthAnalytics.cshtml" />
+    <Content Include="Views\UserAdministration\_UserApplicationList.cshtml" />
+    <Content Include="Views\Shared\_GeoFenceLayout.cshtml" />
+    <Content Include="Views\Termsconditions\TermsConditions.cshtml" />
+    <Content Include="Views\Termsconditions\TermsConditionsConsentReport.cshtml" />
+    <Content Include="Web.PERF.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\AccessDenied\AccessDenied.cshtml" />
+    <Content Include="Views\Dashboard\EmployeeDashboard.cshtml" />
+    <Content Include="Views\Dashboard\PublishAnnouncement.cshtml" />
+    <Content Include="Views\Dashboard\_CustomerDashboard.cshtml" />
+    <Content Include="Views\Organization\_RoleTemplate.cshtml" />
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.UAT.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\File\Upload\" />
+    <Folder Include="CustomAuthorizeAttribute\" />
+    <Folder Include="TempImages\Images\" />
+    <Folder Include="Views\Error\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Common\Main\KBA.Common\KBA.Common.Azure\KBA.Common.Azure.csproj">
+      <Project>{78cded73-5491-435b-aa62-e7bc6f47ec88}</Project>
+      <Name>KBA.Common.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Main\KBA.Common\KBA.Common.DataAccess\KBA.Common.DataAccess.csproj">
+      <Project>{fffdcc66-b7e8-43a2-af1e-274e40dbfb0f}</Project>
+      <Name>KBA.Common.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Main\KBA.Common\KBA.Common.Domain\KBA.Common.Domain.csproj">
+      <Project>{bf0ee62e-50ad-4678-a9bc-7c6b5d0d0613}</Project>
+      <Name>KBA.Common.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Main\KBA.Common\KBA.Common.Framework\KBA.Common.Framework.csproj">
+      <Project>{d63bf3ca-346e-4dd2-b702-bd438d48d03d}</Project>
+      <Name>KBA.Common.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Main\KBA.Common\KBA.Common.InvitationAPI\KBA.Common.InvitationAPI.csproj">
+      <Project>{7f9261ee-441f-417f-a611-738b748a611f}</Project>
+      <Name>KBA.Common.InvitationAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Main\KBA.Common\KBA.Common.Notification\KBA.Common.Notification.csproj">
+      <Project>{ffbb1ae9-c8ff-4f18-a447-6c98a0c99679}</Project>
+      <Name>KBA.Common.Notification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Common\Main\KBA.Common\KBA.Common.Utilities\KBA.Common.Utilities.csproj">
+      <Project>{26e4a48c-de28-404d-8797-d5cf9e8d0f5b}</Project>
+      <Name>KBA.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CosmosDb\CosmosDb.csproj">
+      <Project>{3fdea2b8-9471-4322-b9e9-3e07e8186615}</Project>
+      <Name>CosmosDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KBA.Administration.Business\KBA.Administration.Business.csproj">
+      <Project>{75B2B229-424A-40A9-A790-A90C49C7445C}</Project>
+      <Name>KBA.Administration.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KBA.Administration.Common\KBA.Administration.Common.csproj">
+      <Project>{07fcb480-8465-4a05-9618-e3b85f203dc9}</Project>
+      <Name>KBA.Administration.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KBA.Administration.DataAccess\KBA.Administration.DataAccess.csproj">
+      <Project>{cf325f28-99b2-4de4-9436-c5c52c28af41}</Project>
+      <Name>KBA.Administration.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KBA.Administration.Domain\KBA.Administration.Domain.csproj">
+      <Project>{bdba9bb3-995d-4224-846a-f08d0b07cd18}</Project>
+      <Name>KBA.Administration.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\localizationMessage.ja.resx" />
+    <EmbeddedResource Include="Localization\localizationMessage.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>localizationMessage.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>KBA.Administration.Web.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>KBA.Administration.Web.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>KBA.Administration.Web.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PREPROD|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>KBA.Administration.Web.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PROD|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>KBA.Administration.Web.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PERF|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>KBA.Administration.Web.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50049</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44312/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\..\..\packages\Microsoft.Azure.Services.AppAuthentication.1.0.3\build\Microsoft.Azure.Services.AppAuthentication.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.Azure.Services.AppAuthentication.1.0.3\build\Microsoft.Azure.Services.AppAuthentication.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\packages\Microsoft.Azure.DocumentDB.2.6.0\build\Microsoft.Azure.DocumentDB.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.Azure.DocumentDB.2.6.0\build\Microsoft.Azure.DocumentDB.targets'))" />
+  </Target>
+  <Import Project="..\..\..\..\packages\Microsoft.Azure.Services.AppAuthentication.1.0.3\build\Microsoft.Azure.Services.AppAuthentication.targets" Condition="Exists('..\..\..\..\packages\Microsoft.Azure.Services.AppAuthentication.1.0.3\build\Microsoft.Azure.Services.AppAuthentication.targets')" />
+  <Import Project="..\..\..\..\packages\Microsoft.Azure.DocumentDB.2.6.0\build\Microsoft.Azure.DocumentDB.targets" Condition="Exists('..\..\..\..\packages\Microsoft.Azure.DocumentDB.2.6.0\build\Microsoft.Azure.DocumentDB.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
